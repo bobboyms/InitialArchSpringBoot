@@ -1,0 +1,40 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: Tanos
+  datasource:
+    url: jdbc:postgresql://postgres:5432/tanosdb?createDatabaseIfNotExist=true
+    username: postgres
+    password: 123456789
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+  messages:
+    basename: i18n/messages
+  rabbitmq:
+    host: postgres
+    port: 5672
+    username: admin
+    password: admin
+  redis:
+    host: postgres
+    port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 20000
+
+#######################################
+# Configurações de filas e exchange
+record:
+  rabbitmq:
+    exchange: recordexchange
+    queue: recordqueue
+    routingKey: recordroutingKey
