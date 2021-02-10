@@ -9,6 +9,7 @@ import br.com.tanos.management.record.domain.Participant;
 import br.com.tanos.management.record.adapters.repository.ParticipantRepository;
 import br.com.tanos.management.record.ports.service.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -48,6 +49,7 @@ public class ParticipantServiceImp implements ParticipantService {
     }
 
     @Override
+    @Cacheable("findById")
     public ParticipantDto findById(Long id) {
         return participantMapper.create(find(id));
     }

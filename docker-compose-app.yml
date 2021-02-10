@@ -20,6 +20,8 @@ services:
       - 15672:15672
     volumes:
       - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+    networks:
+      - postgres
     environment:
       - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
       - RABBITMQ_DEFAULT_USER=admin
