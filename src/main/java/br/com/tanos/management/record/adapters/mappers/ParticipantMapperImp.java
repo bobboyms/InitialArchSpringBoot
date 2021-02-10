@@ -1,7 +1,7 @@
-package br.com.tanos.management.record.ports.mappers;
+package br.com.tanos.management.record.adapters.mappers;
 
-import br.com.tanos.management.record.adapters.dto.ParticipantDto;
-import br.com.tanos.management.record.adapters.mappers.ParticipantMapper;
+import br.com.tanos.management.record.ports.dto.ParticipantDto;
+import br.com.tanos.management.record.ports.mappers.ParticipantMapper;
 import br.com.tanos.management.record.domain.Participant;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

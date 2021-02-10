@@ -1,6 +1,6 @@
 package br.com.tanos.management.commons.validations.cpf;
 
-import br.com.tanos.management.record.adapters.repository.ParticipantRepository;
+import br.com.tanos.management.record.ports.repository.ParticipantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

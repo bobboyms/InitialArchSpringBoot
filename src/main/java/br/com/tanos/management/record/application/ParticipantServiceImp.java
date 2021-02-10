@@ -1,13 +1,13 @@
 package br.com.tanos.management.record.application;
 
-import br.com.tanos.management.record.adapters.amqp.ParticipantMessageSend;
-import br.com.tanos.management.record.adapters.dto.ParticipantDto;
-import br.com.tanos.management.record.adapters.mappers.ParticipantMapper;
+import br.com.tanos.management.record.ports.amqp.ParticipantMessageSend;
+import br.com.tanos.management.record.ports.dto.ParticipantDto;
+import br.com.tanos.management.record.ports.mappers.ParticipantMapper;
 import br.com.tanos.management.commons.exception.ObjectNotFoundException;
 import br.com.tanos.management.commons.reponse.ValidationMessage;
 import br.com.tanos.management.record.domain.Participant;
-import br.com.tanos.management.record.adapters.repository.ParticipantRepository;
-import br.com.tanos.management.record.ports.service.ParticipantService;
+import br.com.tanos.management.record.ports.repository.ParticipantRepository;
+import br.com.tanos.management.record.adapters.service.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

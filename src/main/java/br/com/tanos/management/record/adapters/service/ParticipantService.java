@@ -1,6 +1,6 @@
-package br.com.tanos.management.record.ports.service;
+package br.com.tanos.management.record.adapters.service;
 
-import br.com.tanos.management.record.adapters.dto.ParticipantDto;
+import br.com.tanos.management.record.ports.dto.ParticipantDto;
 
 public interface ParticipantService {
     void delete(Long id);

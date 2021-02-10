@@ -1,6 +1,6 @@
-package br.com.tanos.management.record.adapters.mappers;
+package br.com.tanos.management.record.ports.mappers;
 
-import br.com.tanos.management.record.adapters.dto.ParticipantDto;
+import br.com.tanos.management.record.ports.dto.ParticipantDto;
 import br.com.tanos.management.record.domain.Participant;
 
 public interface ParticipantMapper {

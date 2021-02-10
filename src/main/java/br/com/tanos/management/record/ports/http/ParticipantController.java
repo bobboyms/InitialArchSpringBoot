@@ -1,6 +1,6 @@
-package br.com.tanos.management.record.adapters.http;
+package br.com.tanos.management.record.ports.http;
 
-import br.com.tanos.management.record.adapters.dto.ParticipantDto;
+import br.com.tanos.management.record.ports.dto.ParticipantDto;
 import br.com.tanos.management.record.application.ParticipantServiceImp;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;

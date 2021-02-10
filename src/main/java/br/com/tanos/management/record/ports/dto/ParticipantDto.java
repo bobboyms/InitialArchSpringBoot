@@ -1,4 +1,4 @@
-package br.com.tanos.management.record.adapters.dto;
+package br.com.tanos.management.record.ports.dto;
 
 import br.com.tanos.management.commons.validations.cpf.Cpf;
 import lombok.AllArgsConstructor;
