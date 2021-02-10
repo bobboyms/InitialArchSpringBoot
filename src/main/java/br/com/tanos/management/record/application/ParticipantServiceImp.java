@@ -31,7 +31,8 @@ public class ParticipantServiceImp implements ParticipantService {
     @Override
     public ParticipantDto save(ParticipantDto participantDto) {
         final Participant participant = participantMapper.create(participantDto);
-        final ParticipantDto dto = participantMapper.create(participantRepository.save(participant));
+        final ParticipantDto dto = participantMapper.
+                create(participantRepository.save(participant));
         participantMessageSend.sendMessage(dto);
         return dto;
     }
@@ -40,6 +41,7 @@ public class ParticipantServiceImp implements ParticipantService {
     public ParticipantDto update(Long id, ParticipantDto participantDto) {
         find(id);
         final Participant participant = participantMapper.create(participantDto);
+        participant.setId(id);
         return participantMapper.create(participantRepository.save(participant));
     }
 

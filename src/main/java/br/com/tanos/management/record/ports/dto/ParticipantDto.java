@@ -7,17 +7,18 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ParticipantDto {
+public class ParticipantDto implements Serializable {
 
     @NotBlank(message = "Name is required")
     @Column(nullable = false)
     private String name;
 
-    @Cpf
+//    @Cpf
     private String cpf;
 
 }

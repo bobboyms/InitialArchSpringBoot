@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:tanosdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+  messages:
+    basename: i18n/messages
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+  redis:
+    host: localhost
+    port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 20000
+
+#######################################
+# Configurações de filas e exchange
+record:
+  rabbitmq:
+    exchange: recordexchange
+    queue: recordqueue
+    routingKey: recordroutingKey

@@ -6,20 +6,23 @@ services:
       context: .
     environment:
       JAVA_TOOL_OPTIONS: "-Dspring.profiles.active=dev"
-    networks:
-      - postgres
+    ports:
+      - 8090:8090
+    expose:
+      - 8090
+    network_mode: "host"
     depends_on:
       - postgres
       - rabbitmq
       - redis
 
   rabbitmq:
-    image: rabbitmq:3.8.3-management
+    image: rabbitmq:3.8.11-management
     ports:
       - 5672:5672
       - 15672:15672
     volumes:
-      - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+      - rabbitmq:/var/lib/rabbitmq
     networks:
       - postgres
     environment:

@@ -6,4 +6,5 @@ RUN gradle build -x test
 
 FROM openjdk:11-jre-slim
 COPY --from=build /home/gradle/src/build/libs/*.jar application.jar
+EXPOSE 8090
 ENTRYPOINT ["java", "-jar","application.jar"]

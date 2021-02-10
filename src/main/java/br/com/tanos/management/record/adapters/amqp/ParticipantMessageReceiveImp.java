@@ -6,7 +6,6 @@ import lombok.extern.java.Log;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-
 @Log
 @Component
 public class ParticipantMessageReceiveImp implements ParticipantMessageReceive {
