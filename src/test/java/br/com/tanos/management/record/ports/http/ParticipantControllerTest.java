@@ -40,7 +40,6 @@ class ParticipantControllerTest {
 
         assertNotNull(responseEntity);
         assertEquals(204,responseEntity.getStatusCodeValue());
-
     }
 
     @Test

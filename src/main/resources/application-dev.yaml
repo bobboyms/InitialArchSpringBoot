@@ -5,7 +5,7 @@ spring:
   application:
     name: Tanos
   datasource:
-    url: jdbc:postgresql://localhost:5432/tanosdb?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://postgresserver:5432/tanosdb?createDatabaseIfNotExist=true
     username: postgres
     password: 123456789
   jpa:
@@ -19,12 +19,12 @@ spring:
   messages:
     basename: i18n/messages
   rabbitmq:
-    host: localhost
+    host: rabbitserver
     port: 5672
     username: admin
     password: admin
   redis:
-    host: localhost
+    host: redisserver
     port: 6379
   cache:
     type: redis

@@ -10,7 +10,9 @@ services:
       - 8090:8090
     expose:
       - 8090
-    network_mode: "host"
+#    network_mode: "host"
+    networks:
+      - postgres
     depends_on:
       - postgres
       - rabbitmq
@@ -18,6 +20,7 @@ services:
 
   rabbitmq:
     image: rabbitmq:3.8.11-management
+    hostname: rabbitserver
     ports:
       - 5672:5672
       - 15672:15672
@@ -41,6 +44,7 @@ services:
       - postgres:/data/postgres
     ports:
       - "5432:5432"
+    hostname: postgresserver
     networks:
       - postgres
     restart: unless-stopped
@@ -63,6 +67,7 @@ services:
 
   redis:
     image: redis:6.0.4
+    hostname: redisserver
     ports:
       - '6379:6379'
 networks:
