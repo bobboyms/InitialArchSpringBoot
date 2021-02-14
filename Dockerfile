@@ -6,6 +6,6 @@ RUN gradle build --debug -x test
 
 FROM openjdk:11-jre-slim
 COPY --from=build /home/gradle/src/build/libs/*.jar application.jar
-COPY ./script.sh script.sh
+COPY docker/script.sh script.sh
 EXPOSE 8090
 ENTRYPOINT ["bash", "script.sh"]

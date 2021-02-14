@@ -12,7 +12,7 @@ services:
       - 8090
 #    network_mode: "host"
     networks:
-      - postgres
+      - localnetwork
     depends_on:
       - postgres
       - rabbitmq
@@ -27,7 +27,7 @@ services:
     volumes:
       - rabbitmq:/var/lib/rabbitmq
     networks:
-      - postgres
+      - localnetwork
     environment:
       - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
       - RABBITMQ_DEFAULT_USER=admin
@@ -46,7 +46,7 @@ services:
       - "5432:5432"
     hostname: postgresserver
     networks:
-      - postgres
+      - localnetwork
     restart: unless-stopped
 
   pgadmin:
@@ -62,16 +62,20 @@ services:
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
-      - postgres
+      - localnetwork
     restart: unless-stopped
 
   redis:
     image: redis:6.0.4
     hostname: redisserver
+#    links:
+#      - novo
+    networks:
+      - localnetwork
     ports:
       - '6379:6379'
 networks:
-  postgres:
+  localnetwork:
     driver: bridge
 
 volumes:

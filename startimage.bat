@@ -1,1 +1,1 @@
-docker-compose -f docker-compose-app.yml up --build --force-recreate --no-deps
+docker-compose -f docker-compose-app.yml up --force-recreate --no-deps --build
