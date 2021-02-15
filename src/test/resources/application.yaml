@@ -18,11 +18,7 @@ spring:
     password: admin
   redis:
     host: localhost
-    port: 6379
-  cache:
-    type: redis
-    redis:
-      time-to-live: 20000
+    port: 6370
 
 #######################################
 # Configurações de filas e exchange

@@ -1,5 +1,6 @@
 package br.com.tanos.management.record.application;
 
+import br.com.tanos.management.commons.config.TestRedisConfiguration;
 import br.com.tanos.management.commons.exception.ObjectNotFoundException;
 import br.com.tanos.management.record.adapters.service.ParticipantService;
 import br.com.tanos.management.record.domain.Participant;
@@ -18,8 +19,8 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
 @RunWith(SpringRunner.class)
+@SpringBootTest(classes = {TestRedisConfiguration.class})
 class ParticipantServiceImpTest {
 
     @MockBean
@@ -74,6 +75,11 @@ class ParticipantServiceImpTest {
         } catch (Exception e) {
             assertEquals(e.getClass(), ObjectNotFoundException.class);
         }
+    }
+
+    @Test
+    void findOne() {
+
     }
 
 
