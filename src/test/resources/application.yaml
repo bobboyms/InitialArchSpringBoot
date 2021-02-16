@@ -11,11 +11,11 @@ spring:
       ddl-auto: create-drop
   messages:
     basename: i18n/messages
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: admin
-    password: admin
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: admin
   redis:
     host: localhost
     port: 6370

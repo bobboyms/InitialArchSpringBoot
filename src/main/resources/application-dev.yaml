@@ -6,6 +6,7 @@ spring:
     name: Tanos
   datasource:
     url: jdbc:postgresql://postgresserver:5432/tanosdb?createDatabaseIfNotExist=true
+
     username: postgres
     password: 123456789
   jpa:

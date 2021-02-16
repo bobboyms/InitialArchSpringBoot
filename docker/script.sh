@@ -1,4 +1,4 @@
 #/bin/bash
 echo VALUE: $VALUE
 echo OPT: $JAVA_TOOL_OPTIONS
-java $JAVA_TOOL_OPTIONS -jar application.jar
+java -Dspring.profiles.active=dev -jar application.jar

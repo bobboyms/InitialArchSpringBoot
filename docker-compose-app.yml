@@ -5,7 +5,7 @@ services:
     build:
       context: .
     environment:
-      JAVA_TOOL_OPTIONS: "-Dspring.profiles.active=dev"
+      VALUE: "-Dspring.profiles.active=dev"
     ports:
       - 8090:8090
     expose:
@@ -34,11 +34,11 @@ services:
       - RABBITMQ_DEFAULT_PASS=admin
 
   postgres:
-    container_name: postgres_container
     image: postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123456789}
+      POSTGRES_DB: tanosdb
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
@@ -49,21 +49,20 @@ services:
       - localnetwork
     restart: unless-stopped
 
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-    depends_on:
-      - postgres
-    volumes:
-      - pgadmin:/root/.pgadmin
-    ports:
-      - "${PGADMIN_PORT:-5050}:80"
-    networks:
-      - localnetwork
-    restart: unless-stopped
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+#      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+#    depends_on:
+#      - postgres
+#    volumes:
+#      - pgadmin:/root/.pgadmin
+#    ports:
+#      - "${PGADMIN_PORT:-5050}:80"
+#    networks:
+#      - localnetwork
+#    restart: unless-stopped
 
   redis:
     image: redis:6.0.4
