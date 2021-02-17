@@ -1,4 +1,9 @@
+server:
+  port: 8090
+
 spring:
+  application:
+    name: Tanos
   datasource:
     url: jdbc:h2:mem:tanosdb
     driver-class-name: org.h2.Driver
@@ -18,7 +23,11 @@ spring:
 #    password: admin
   redis:
     host: localhost
-    port: 6370
+    port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 20000
 
 #######################################
 # Configurações de filas e exchange
@@ -26,4 +35,4 @@ record:
   rabbitmq:
     exchange: recordexchange
     queue: recordqueue
-    routingKey: recordroutingKey
+    routingKey: recordroutingKeys
